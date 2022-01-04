@@ -1,0 +1,10 @@
+
+
+*** Laufende container anzeigen ***
+docker ps -a
+
+** Ins Image wechseln **
+docker exec -it <Container-ID> bash  (oder sh)
+
+**Dateisystem als tar-Archiv exportieren**
+docker export --output="b417add44de6.tar" <Container-ID>
