@@ -1,0 +1,4 @@
+** was man so braucht **
+du -hsx /* | sort -rh | head -n 40
+
+ffmpeg -i <input> -preset slow -vcodec libx264 -x264-params crf=23 -acodec ac3_fixed <output>
