@@ -10,6 +10,9 @@ Schneiden HH:MM:SS.xxx
 Bis 30 Sek abschneiden, dann 10 Sek Video, dann abschneiden
 ffmpeg -ss 00:00:30.0 -i input.wmv -c copy -t 00:00:10.0 output.wmv
 
+2 Sek vom Anfang abschneiden
+ffmpeg -i input.flv -ss 2 -vcodec copy -acodec copy output.flv
+
 Nach 1 h abschneiden  
 ffmpeg -ss 00:00:00.0 -i input.wmv -c copy -t 00:60:00.0 output.wmv
 
