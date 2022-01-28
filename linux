@@ -12,3 +12,12 @@ ffmpeg -ss 00:00:30.0 -i input.wmv -c copy -t 00:00:10.0 output.wmv
 
 Nach 1 h abschneiden  
 ffmpeg -ss 00:00:00.0 -i input.wmv -c copy -t 00:60:00.0 output.wmv
+
+Ohne reencode  
+:: Create File List
+echo file file1.mp4 >  mylist.txt 
+echo file file2.mp4 >> mylist.txt
+echo file file3.mp4 >> mylist.txt
+
+:: Concatenate Files
+ffmpeg -f concat -i mylist.txt -c copy output.mp4
