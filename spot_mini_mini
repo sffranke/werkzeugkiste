@@ -1,0 +1,29 @@
+**make spot_mini_mini run**
+
+https://github.com/OpenQuadruped/spot_mini_mini#how-to-run delivers no details so here they are:
+
+sudo apt install gazebo9-common libgazebo9-dev gazebo9 ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-dev ros-melodic-gazebo-ros-control ros-melodic-gazebo-ros ros-melodic-urdf-sim-tutorial ros-melodic-simulatorssudo apt-get
+
+install ros-melodic-desktop-full
+
+mkdir catkin_ws  
+cd catkin_ws/  
+mkdir ~/catkin_ws/src  
+cd ~/catkin_ws/src  
+git clone https://github.com/OpenQuadruped/spot_mini_mini.git  
+cd ..  
+catkin_make  
+source ~/catkin_ws/devel/setup.bash  
+sudo apt-get install ros-melodic-joy  
+
+
+python3 -m venv spot_mini_venv  
+source spot_mini_venv/bin/activate  
+pip3 install rospkg  
+pip3 install gym  
+pip3 install pyyaml  
+pip3 install scipy  
+pip3 install pybullet  
+pip3 install torch  
+
+roslaunch mini_ros spot_move.launch  
