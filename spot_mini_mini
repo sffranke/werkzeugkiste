@@ -1,5 +1,7 @@
 **make spot_mini_mini run**
 
+*simulation*  
+
 https://github.com/OpenQuadruped/spot_mini_mini#how-to-run delivers no details so here they are:
 
 sudo apt install gazebo9-common libgazebo9-dev gazebo9 ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-dev ros-melodic-gazebo-ros-control ros-melodic-gazebo-ros ros-melodic-urdf-sim-tutorial ros-melodic-simulatorssudo apt-get
@@ -27,3 +29,32 @@ pip3 install pybullet
 pip3 install torch  
 
 roslaunch mini_ros spot_move.launch  
+
+*the real robot*  
+set up ubuntu 18.04 on Pi4  
+https://cdimage.ubuntu.com/releases/18.04/release/ubuntu-18.04.5-preinstalled-server-armhf+raspi4.img.xz   
+sudo apt-get update  
+reboot because of annoying lock  
+sudo apt-get upgrade  
+sudo reboot
+sudo apt-get install xrdp  
+
+set up bluetooth  
+(https://tomaraei.com/how-to-enable-bluetooth-on-raspberry-pi-4-running-ubuntu-server-18-04/)  
+To enable Bluetooth, you need to read the instructions written in the /boot/firmware/nobtcfg.txt file.  
+The solution is to edit syscfg.txt and change include nobtcfg.txt to include btcfg.txt and reboot.  
+
+sudo apt-get install bluez  
+wget https://ftp.fau.de/ubuntu-ports/pool/multiverse/p/pi-bluetooth/pi-bluetooth_0.1.10ubuntu6_armhf.deb  
+sudo dpkg -i pi-bluetooth_0.1.10ubuntu6_armhf.deb  
+
+sudo rebooot
+sudo bluetoothctl
+[NEW] Controller B8:27:EB:68:76:B6 ubuntu [default]
+Agent registered
+[bluetooth]# pairable on
+[bluetooth]# scan on                            .....d.         
+[bluetooth]# pair A4:AE:11:DE:4E:BB
+[bluetooth]# trust A4:AE:11:DE:4E:BB
+
+mtc
