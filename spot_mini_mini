@@ -48,13 +48,17 @@ sudo apt-get install bluez
 wget https://ftp.fau.de/ubuntu-ports/pool/multiverse/p/pi-bluetooth/pi-bluetooth_0.1.10ubuntu6_armhf.deb  
 sudo dpkg -i pi-bluetooth_0.1.10ubuntu6_armhf.deb  
 
-sudo rebooot
-sudo bluetoothctl
-[NEW] Controller B8:27:EB:68:76:B6 ubuntu [default]
-Agent registered
-[bluetooth]# pairable on
-[bluetooth]# scan on                            .....d.         
-[bluetooth]# pair A4:AE:11:DE:4E:BB
-[bluetooth]# trust A4:AE:11:DE:4E:BB
+sudo rebooot  
+sudo bluetoothctl  
+[NEW] Controller B8:27:EB:68:76:B6 ubuntu [default]  
+Agent registered  
+[bluetooth]# pairable on  
+[bluetooth]# scan on   
+[bluetooth]# pair A4:AE:11:DE:4E:BB  
+[bluetooth]# trust A4:AE:11:DE:4E:BB  
+
+time for a backuo now:  
+diskutil list  
+sudo dd if=/dev/disk2 of=/Users/etsc/PiSDCardBackup.dmg  
 
 mtc
