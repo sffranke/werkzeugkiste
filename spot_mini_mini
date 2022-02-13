@@ -88,5 +88,18 @@ sudo apt-get install python3-venv
 sudo apt install python3-pip  
 sudo apt-get install ros-melodic-rosserial  
 
+*plattformIO*
+python3 -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"  
+
+git clone https://github.com/OpenQuadruped/spot_mini_mini.git  
+cd ~/ros_catkin_ws/spot_mini_mini/spot_real/Control/Teensy/SpotMiniMini/lib  
+git clone https://github.com/adafruit/Adafruit_Sensor.git 
+git clone https://github.com/adafruit/Adafruit_BNO055.git  
+git clone https://github.com/adafruit/Adafruit_BusIO.git
+
+glibc =2.28 req.! :-(
+
+
+
 
 mtc
