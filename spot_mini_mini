@@ -30,6 +30,8 @@ pip3 install torch
 
 roslaunch mini_ros spot_move.launch  
 
+#######################################  
+
 *the real robot*  
 set up ubuntu 18.04 on Pi4  
 https://cdimage.ubuntu.com/releases/18.04/release/ubuntu-18.04.5-preinstalled-server-armhf+raspi4.img.xz   
@@ -83,7 +85,7 @@ source /opt/ros/melodic/setup.bash
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc  
 
 *set up rosserial*  
-sudo apt-get install python3-venv  
+#sudo apt-get install python3-venv  
 
 sudo apt install python3-pip  
 sudo apt-get install ros-melodic-rosserial  
