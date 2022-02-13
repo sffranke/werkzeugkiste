@@ -6,7 +6,7 @@ https://github.com/OpenQuadruped/spot_mini_mini#how-to-run delivers no details s
 
 sudo apt install gazebo9-common libgazebo9-dev gazebo9 ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-dev ros-melodic-gazebo-ros-control ros-melodic-gazebo-ros ros-melodic-urdf-sim-tutorial ros-melodic-simulatorssudo apt-get
 
-install ros-melodic-desktop-full
+install ros-melodic-desktop-full  
 
 mkdir catkin_ws  
 cd catkin_ws/  
@@ -36,7 +36,7 @@ https://cdimage.ubuntu.com/releases/18.04/release/ubuntu-18.04.5-preinstalled-se
 sudo apt-get update  
 reboot because of annoying lock  
 sudo apt-get upgrade  
-sudo reboot
+sudo reboot  
 sudo apt-get install xrdp  
 
 set up bluetooth  
@@ -75,8 +75,11 @@ cd ~/ros_catkin_ws
 rosinstall_generator ros_comm --rosdistro melodic --deps --wet-only --tar > melodic-ros_comm-wet.rosinstall  
 wstool init src melodic-ros_comm-wet.rosinstall  
 
+cd ~/ros_catkin_ws  
+rosdep install -y --from-paths src --ignore-src --rosdistro melodic -r --os=debian:buster  
+sudo ./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/melodic  
 
-
-
+source /opt/ros/melodic/setup.bash 
+echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc  
 
 mtc
