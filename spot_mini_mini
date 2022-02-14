@@ -88,18 +88,39 @@ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 sudo apt install python3-pip  
 sudo apt-get install ros-melodic-rosserial  
 
+
 *plattformIO has to be done on another computer which ueses glibc =2.28 *
-python3 -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"  
+
+*PiOS bullseye* 
 
 git clone https://github.com/OpenQuadruped/spot_mini_mini.git  
-cd ~/ros_catkin_ws/spot_mini_mini/spot_real/Control/Teensy/SpotMiniMini/lib  
+
+cd spot_mini_mini/spot_real/Control/Teensy/SpotMiniMini/lib  
 git clone https://github.com/adafruit/Adafruit_Sensor.git 
 git clone https://github.com/adafruit/Adafruit_BNO055.git  
 git clone https://github.com/adafruit/Adafruit_BusIO.git
 
+sudo apt install pip  
+pip install -U platformio  
+sudo apt-get install git  
+
 glibc =2.28 req.! :-(
 
+cd ~/spot_mini_mini/spot_real/Control/Teensy/SpotMiniMini
 
+sudo apt-get install libusb-dev
+wget https://www.pjrc.com/teensy/00-teensy.rules
+sudo cp 00-teensy.rules /etc/udev/rules.d/00-teensy.rules
 
+git clone https://github.com/PaulStoffregen/teensy_loader_cli.git
+cd teensy_loader_cli
+make
 
-mtc
+add upload_protocol = teensy-cli in platformio.ini 
+
+platformio run -t upload
+
+*back to Ubuntu 18.04*
+catkin_make  
+source ~/catkin_ws/devel/setup.bash  
+roslaunch mini_ros spot_real.launch
