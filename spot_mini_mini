@@ -4,9 +4,9 @@
 
 https://github.com/OpenQuadruped/spot_mini_mini#how-to-run delivers no details so here they are:
 
-sudo apt install gazebo9-common libgazebo9-dev gazebo9 ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-dev ros-melodic-gazebo-ros-control ros-melodic-gazebo-ros ros-melodic-urdf-sim-tutorial ros-melodic-simulatorssudo apt-get
+sudo apt-get install gazebo9-common libgazebo9-dev gazebo9 ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-dev ros-melodic-gazebo-ros-control ros-melodic-gazebo-ros ros-melodic-urdf-sim-tutorial ros-melodic-simulators
 
-install ros-melodic-desktop-full  
+sudo apt-get install ros-melodic-desktop-full  
 
 mkdir catkin_ws  
 cd catkin_ws/  
