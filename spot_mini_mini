@@ -52,8 +52,6 @@ sudo dpkg -i pi-bluetooth_0.1.10ubuntu6_armhf.deb
 
 sudo rebooot  
 sudo bluetoothctl  
-[NEW] Controller B8:27:EB:68:76:B6 ubuntu [default]  
-Agent registered  
 [bluetooth]# pairable on  
 [bluetooth]# scan on   
 [bluetooth]# pair A4:AE:11:DE:4E:BB  
@@ -90,7 +88,7 @@ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 sudo apt install python3-pip  
 sudo apt-get install ros-melodic-rosserial  
 
-*plattformIO*
+*plattformIO has to be done on another computer which ueses glibc =2.28 *
 python3 -c "$(curl -fsSL https://raw.githubusercontent.com/platformio/platformio/master/scripts/get-platformio.py)"  
 
 git clone https://github.com/OpenQuadruped/spot_mini_mini.git  
