@@ -121,6 +121,16 @@ add upload_protocol = teensy-cli in platformio.ini
 platformio run -t upload
 
 *back to Ubuntu 18.04*
+sudo apt-get install ros-melodic-desktop-full 
+sudo apt-get install ros-melodic-joy
+
+sudo apt install python3-pip  
+pip3 install cython
+pip3 install numpy
+sudo apt-get install gfortran
+pip3 install scipy
+
 catkin_make  
-source ~/catkin_ws/devel/setup.bash  
+source ~/ros_catkin_ws/devel/setup.bash  
+
 roslaunch mini_ros spot_real.launch
