@@ -104,31 +104,29 @@ sudo apt install pip
 pip install -U platformio  
 sudo apt-get install git  
 
-glibc =2.28 req.! :-(
+glibc =2.28 req.! :-(  
 
-cd ~/spot_mini_mini/spot_real/Control/Teensy/SpotMiniMini
+cd ~/spot_mini_mini/spot_real/Control/Teensy/SpotMiniMini  
 
-sudo apt-get install libusb-dev
-wget https://www.pjrc.com/teensy/00-teensy.rules
-sudo cp 00-teensy.rules /etc/udev/rules.d/00-teensy.rules
+sudo apt-get install libusb-dev  
+wget https://www.pjrc.com/teensy/00-teensy.rules  
+sudo cp 00-teensy.rules /etc/udev/rules.d/00-teensy.rules  
 
 git clone https://github.com/PaulStoffregen/teensy_loader_cli.git
-cd teensy_loader_cli
-make
+cd teensy_loader_cli  
+make  
 
 add upload_protocol = teensy-cli in platformio.ini 
 
-platformio run -t upload
+platformio run -t upload  
 
-*back to Ubuntu 18.04*
+*back to Ubuntu 18.04*  
 sudo apt-get install ros-melodic-desktop-full 
-sudo apt-get install ros-melodic-joy
+sudo apt-get install ros-melodic-joy  
 
-sudo apt install python3-pip  
-pip3 install cython
-pip3 install numpy
-sudo apt-get install gfortran
-pip3 install scipy
+sudo apt-get install gfortran  
+pip install  pybullet 
+pip install gym
 
 catkin_make  
 source ~/ros_catkin_ws/devel/setup.bash  
