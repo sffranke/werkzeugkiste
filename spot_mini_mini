@@ -134,3 +134,7 @@ catkin_make
 source ~/ros_catkin_ws/devel/setup.bash  
 
 roslaunch mini_ros spot_real.launch
+
+**************
+python3 ros_catkin_ws/src/spot_mini_mini/spot_real/Control/RPi/lib/serial_test.py
+
