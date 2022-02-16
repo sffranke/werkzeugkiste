@@ -18,7 +18,6 @@ catkin_make
 source ~/catkin_ws/devel/setup.bash  
 sudo apt-get install ros-melodic-joy  
 
-
 python3 -m venv spot_mini_venv  
 source spot_mini_venv/bin/activate  
 pip3 install rospkg  
@@ -57,7 +56,7 @@ sudo bluetoothctl
 [bluetooth]# pair A4:AE:11:DE:4E:BB  
 [bluetooth]# trust A4:AE:11:DE:4E:BB  
 
-time for a backuo now:  
+time for a backup now:  
 diskutil list  
 sudo dd if=/dev/disk2 of=/Users/etsc/PiSDCardBackup.dmg  
 
@@ -123,6 +122,9 @@ platformio run -t upload
 *back to Ubuntu 18.04*  
 sudo apt-get install ros-melodic-desktop-full 
 sudo apt-get install ros-melodic-joy  
+
+cd ~/ros_catkin_ws/src  
+git clone https://github.com/OpenQuadruped/spot_mini_mini.git  
 
 sudo apt-get install gfortran  
 pip install  pybullet 
