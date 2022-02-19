@@ -37,5 +37,9 @@ source devel/setup.bash
 sudo apt-get install ros-melodic-joy 
 sudo apt install python-pip  
 pip install pybullet  
+pip install cython  
+pip install gym    
 
 roslaunch mini_ros spot_real.launch
+
+no way to get it work :-(
