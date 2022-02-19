@@ -1,24 +1,41 @@
 **real Spot**
 
-RPi Bullseye  
+RPi Ubuntu 18.4  
 
 sudo bluetoothctl    
 pairable on   
 scan on  
 scan off  
 pair A4:AE:11:DE:4E:BB  
-trust A4:AE:11:DE:4E:BB  
+trust A4:AE:11:DE:4E:BB
 
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'  
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654  
 sudo apt-get update  
-sudo apt-get upgrade 
+sudo apt-get upgrade  
 
-sudo apt install -y python3-rosdep python3-rosinstall-generator python3-wstool python3-rosinstall build3-essential cmake  
-sudo rosdep init
-rosdep update
+sudo apt install ros-melodic-desktop
+sudo apt install -y python3-rosdep
 
-mkdir -p ~/ros_catkin_ws
-cd ~/ros_catkin_ws
+#sudo apt install -y python3-rosdep python3-rosinstall-generator python3-wstool python3-rosinstall build3-essential cmake  
+sudo rosdep init  
+rosdep update  
 
+echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc  
+source ~/.bashrc  
+
+sudo apt-get install cmake python-catkin-pkg python-empy python-nose python-setuptools libgtest-dev python-rosinstall python-rosinstall-generator python-wstool build-essential git  
+
+mkdir -p ~/catkin_ws/src   
+cd ~/catkin_ws/src    
+git clone https://github.com/OpenQuadruped/spot_mini_mini.git  
+cd ~/catkin_ws
+catkin_make
+source devel/setup.bash
+
+sudo apt-get install ros-melodic-joy 
+sudo apt install python-pip  
+pip install pybullet  
+
+roslaunch mini_ros spot_real.launch
