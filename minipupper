@@ -1,0 +1,17 @@
+ubuntu-18.04.5-preinstalled-server-arm64+raspi4.img
+
+set up bluetooth  
+(https://tomaraei.com/how-to-enable-bluetooth-on-raspberry-pi-4-running-ubuntu-server-18-04/)  
+To enable Bluetooth, you need to read the instructions written in the /boot/firmware/nobtcfg.txt file.  
+The solution is to edit syscfg.txt and change include nobtcfg.txt to include btcfg.txt and reboot.  
+
+sudo apt-get install bluez  
+wget https://ftp.fau.de/ubuntu-ports/pool/multiverse/p/pi-bluetooth/pi-bluetooth_0.1.10ubuntu6_arm64.deb 
+sudo dpkg -i pi-bluetooth_0.1.10ubuntu6_arm64.deb
+
+time for a backup now:  
+diskutil list  
+sudo dd if=/dev/disk2 of=/Users/etsc/PiSDCardBackup_BT_WIFI.dmg 
+
+sudo apt-get install xrdp  
+
