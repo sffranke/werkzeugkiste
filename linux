@@ -5,8 +5,7 @@ du -hsx /* | sort -rh | head -n 40
 
 Umcodieren nach mp4  
 Universal-mp4:
-ffmpeg -i <input> -map 0:1 -map 0:0 -preset slow -vcodec libx264 -x264-params crf=23 -color_primaries 1 -color_trc 1 -colorspace 1 -acodec ac3_fixed <output>
-
+ffmpeg -i <input> -map 0:1 -map 0:0 -pix_fmt yuv420p -preset slow -vcodec libx264 -x264-params crf=23 -color_primaries 1 -color_trc 1 -colorspace 1 -acodec aac -strict experimental <output>
 Schneiden HH:MM:SS.xxx  
 Bis 30 Sek abschneiden, dann 10 Sek Video, dann abschneiden
 ffmpeg -ss 00:00:30.0 -i input.wmv -c copy -t 00:00:10.0 output.wmv
