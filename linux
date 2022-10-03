@@ -4,7 +4,8 @@ Platzverbrauch
 du -hsx /* | sort -rh | head -n 40
 
 Umcodieren nach mp4  
-ffmpeg -i <input> -preset slow -vcodec libx264 -x264-params crf=23 -acodec ac3_fixed <output>
+Universal-mp4:
+ffmpeg -i <input> -map 0:1 -map 0:0 -preset slow -vcodec libx264 -x264-params crf=23 -color_primaries 1 -color_trc 1 -colorspace 1 -acodec ac3_fixed <output>
 
 Schneiden HH:MM:SS.xxx  
 Bis 30 Sek abschneiden, dann 10 Sek Video, dann abschneiden
