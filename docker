@@ -1,12 +1,21 @@
-docker pull osrf/ros:noetic-desktop-full
-docker pull althack/ros:noetic-gazebo-2022-02-01
+#docker run -it -v ~/catkin_ws:/root/catkin_ws -v ~/.ssh:/root/.ssh --network host --env ROS_MASTER_URI=http://localhost:11311 --name ros <id>
+docker run -it --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" althack/ros:noetic-gazebo-2022-02-01 rqt
+export containerId=$(docker ps -l -q)
 
-docker run -it -v ~/catkin_ws:/root/catkin_ws -v ~/.ssh:/root/.ssh --network host --env ROS_MASTER_URI=http://localhost:11311 --name ros <id>
-docker run -it <idD
-docker cp  quadrupted_robot_tutorial ros:/usr/share
+docker start ros
+docker exec -it ros bash
+
+#docker cp  quadrupted_robot_tutorial ros:/usr/share
 
 docker commit <id>
 
+source /opt/ros/noetic/setup.sh
+
+roscore & :
+
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+#rostopic pub -r 1 /test std_msgs/String "test"
 
 docker stop <id>
 docker rm <id>
