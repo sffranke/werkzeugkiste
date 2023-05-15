@@ -1,3 +1,18 @@
+docker pull osrf/ros:noetic-desktop-full
+docker pull althack/ros:noetic-gazebo-2022-02-01
+
+docker run -it -v ~/catkin_ws:/root/catkin_ws -v ~/.ssh:/root/.ssh --network host --env ROS_MASTER_URI=http://localhost:11311 --name ros <id>
+docker run -it <idD
+docker cp  quadrupted_robot_tutorial ros:/usr/share
+
+docker commit <id>
+
+
+docker stop <id>
+docker rm <id>
+
+docker rmi $(docker images -a -q)
+
 
 
 *** Laufende container anzeigen ***
