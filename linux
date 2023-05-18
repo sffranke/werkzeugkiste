@@ -24,3 +24,9 @@ echo file file3.mp4 >> mylist.txt
 
 :: Concatenate Files
 ffmpeg -f concat -i mylist.txt -c copy output.mp4
+
+:: Ton manipulieren
+arecord -f S16_LE -r 44100 -c 2 -D hw:0,0 | ffmpeg -f s16le -ac 2 -i - -af rubberband=pitch=1.5 -f wav - | ffplay -
+
+sox -d -d pitch +600 contrast 100 sinc 300-3300
+
