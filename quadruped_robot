@@ -1,1 +1,21 @@
+git clone https://github.com/PXLAIRobotics/ROSNoeticDocker.git  
+Dockerfile:  
+ENV DEBIAN_FRONTEND noninteractive  
+ENV SHELL /bin/bash  
 
+./003_start_pxl_noetic_full_desktop.sh  
+
+mkdir -p /home/user/Projects/quadruped_robot/src
+
+docker cp /home/franke/quadrupted_robot_tutorial/UI 225df768cc75:/home/user/Projects/quadrupted_robot/.  
+docker cp /home/franke/quadrupted_robot_tutorial/controller 225df768cc75:/home/user/Projects/quadruped_robot/src/.
+docker cp /home/franke/quadrupted_robot_tutorial/joypad 225df768cc75:/home/user/Projects/quadruped_robot/src/.
+docker cp /home/franke/quadrupted_robot_tutorial/robot_description 225df768cc75:/home/user/Projects/quadruped_robot/src/.
+docker cp /home/franke/quadrupted_robot_tutorial/spot 225df768cc75:/home/user/Projects/quadruped_robot/src/.
+docker cp /home/franke/quadrupted_robot_tutorial/spot 225df768cc75:/home/user/Projects/quadruped_robot/src/.
+docker cp /home/franke/quadrupted_robot_tutorial/spot_gazebo 225df768cc75:/home/user/Projects/quadruped_robot/src/.
+
+ 
+sudo apt update   
+sudo apt install ros-noetic-ros-control  
+sudo apt install ros-noetic-ros-controlers  
