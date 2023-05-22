@@ -22,6 +22,6 @@ sudo apt install ros-noetic-ros-controlers
 cd /home/user/Projects/quadruped_robot  
 catkin_make  
 source /home/user/Projects/quadruped_robot/devel/setup.sh   
-
-roslaunch spot run_robot_gazebo.launch  
 python3 Projects/quadruped_robot/UI/controller.py  
+roslaunch spot run_robot_gazebo.launch  
+
