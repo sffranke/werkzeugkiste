@@ -17,11 +17,16 @@ docker cp /home/franke/quadrupted_robot_tutorial/spot_gazebo 225df768cc75:/home/
 
 sudo apt update   
 sudo apt install ros-noetic-ros-control   
-sudo apt install ros-noetic-ros-controlers    
+sudo apt install ros-noetic-ros-controlers 
+sudo apt install ros-noetic-joy  
+
+
 
 cd /home/user/Projects/quadruped_robot  
 catkin_make  
 source /home/user/Projects/quadruped_robot/devel/setup.sh   
 python3 Projects/quadruped_robot/UI/controller.py  
 roslaunch spot run_robot_gazebo.launch  
+
+./005_attach_bash_to_noetic_full_desktop.sh  
 
